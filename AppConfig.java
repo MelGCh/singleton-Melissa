@@ -1,6 +1,7 @@
 public class AppConfig {
     private String theme;
     private String language;
+    private static final AppConfig instance = new AppConfig();// se creo nueva instancia
 
     public AppConfig() {
         // Load default settings
@@ -9,6 +10,9 @@ public class AppConfig {
         System.out.println("New AppConfig instance created!");
     }
 
+    public static AppConfig getInstance(){// se agrego nuevo método
+        return instance;
+    }
     public String getTheme() { return theme; }
     public void setTheme(String theme) { this.theme = theme; }
 
